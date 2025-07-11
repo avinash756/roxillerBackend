@@ -179,6 +179,10 @@ app.get("/owner/stores/ratings", authenticateToken, async (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.send("backend is live");
+});
+
 app.get("/storesRating", authenticateToken, async (req, res) => {
   try {
     const [stores] = await connection.execute(`
